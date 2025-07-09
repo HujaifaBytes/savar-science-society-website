@@ -10,6 +10,29 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .rocket-float {
+    animation: rocket-float 2.2s ease-in-out infinite alternate;
+  }
+  .button-text-main {
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform, opacity;
+  }
+  .button-text-hover {
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.4s cubic-bezier(0.4,0,0.2,1);
+    will-change: transform, opacity;
+  }
+}
+
+@keyframes rocket-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.1);
+  }
 }
 
 @layer base {

@@ -248,28 +248,25 @@ export default function HomePage() {
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
               <Button
-                    asChild
-                    className="group relative h-12 w-48 overflow-hidden rounded-xl border-0 px-6 py-2 font-bold shadow-lg shadow-red-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-red-600/40"
-                    style={{ 
-                      background: 'linear-gradient(to right, #ef4444, #f97316)',
-                      WebkitBoxReflect: 'below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.2))'
-                    }}
-                  >
-                    <Link 
-                      href="/register" 
-                      className="relative z-10 flex h-full w-full items-center justify-center text-white"
-                    >
-                      <div className="flex items-center text-sm">
-                        <Rocket className="mr-2 h-4 w-4 group-hover:animate-bounce" />
-                        Launch Now
-                      </div>
-                      
-                      {/* Flame effect */}
-                      <div className="absolute inset-0 overflow-hidden">
-                        <div className="absolute -bottom-5 -left-5 -right-5 top-0 animate-flame bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj48ZmlsdGVyIGlkPSJub2lzZSIgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuMDUiIG51bU9jdGF2ZXM9IjUiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48L3N2Zz4=')] opacity-30 mix-blend-screen"></div>
-                      </div>
-                    </Link>
-                  </Button>
+                asChild
+                className="group relative px-10 py-4 bg-gradient-to-r from-red-500 to-orange-500 rounded-full shadow-xl hover:shadow-2xl hover:shadow-red-600 shadow-red-600 uppercase font-serif tracking-widest overflow-hidden border-0 cursor-pointer z-10 after:absolute after:rounded-full after:bg-red-200 after:h-[85%] after:w-[95%] after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 hover:saturate-[1.15] active:saturate-[1.4]"
+                style={{ WebkitBoxReflect: 'below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4))' }}
+              >
+                <Link href="/register" className="relative z-10 flex items-center justify-center w-full h-full select-none">
+                  {/* Floating Rocket */}
+                  <span className="mr-3 flex items-center">
+                    <Rocket className="h-6 w-6 rocket-float text-white drop-shadow-lg" aria-hidden="true" />
+                  </span>
+                  {/* Main Text */}
+                  <span className="button-text-main absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 group-hover:opacity-0 group-hover:-translate-y-6 transition-all duration-300 text-lg font-bold bg-gradient-to-r from-red-100 to-orange-100 bg-clip-text text-transparent tracking-widest">
+                    Registration Now
+                  </span>
+                  {/* Hover Text */}
+                  <span className="button-text-hover absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-6 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 text-lg font-extrabold bg-gradient-to-r from-red-700 to-orange-700 bg-clip-text text-transparent tracking-widest">
+                    Click To Go
+                  </span>
+                </Link>
+              </Button>
 
 
               {admitCardEnabled && (
